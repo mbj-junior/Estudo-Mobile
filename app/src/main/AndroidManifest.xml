@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TrainingSetup"></activity>
+        <activity android:name=".Training"></activity>
+        <activity android:name=".TrainingSetup" />
         <activity android:name=".Time" />
         <activity android:name=".RoundSetup" />
         <activity android:name=".MainActivity">

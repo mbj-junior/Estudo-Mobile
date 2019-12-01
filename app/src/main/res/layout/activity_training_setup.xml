@@ -15,9 +15,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.199"
-        app:srcCompat="@drawable/PlayImg" />
+        app:srcCompat="@drawable/playimg"
+        android:onClick="irParaTraining"
+
+        />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="138dp"
         android:layout_height="94dp"
         android:checkedButton="@id/rbNormal"
@@ -50,4 +54,18 @@
             android:text="HARD"
             android:textSize="24sp" />
     </RadioGroup>
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.896"
+        app:srcCompat="@drawable/voltar"
+        android:onClick="irParaMainActivity"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
