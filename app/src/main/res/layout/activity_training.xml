@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".Training">
 
+    <TextView
+        android:id="@+id/etCronometro"
+        android:layout_width="126dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/electrolize"
+        android:text="00:00"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.069" />
+
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="114dp"
@@ -32,22 +47,6 @@
         app:layout_constraintVertical_bias="0.889"
         app:srcCompat="@drawable/voltar" />
 
-    <EditText
-        android:id="@+id/etTime2"
-        android:layout_width="175dp"
-        android:layout_height="76dp"
-        android:ems="10"
-        android:fontFamily="@font/electrolize"
-        android:inputType="time"
-        android:text="00:00"
-        android:textAlignment="center"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045" />
-
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="226dp"
@@ -72,19 +71,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2" />
 
-    <EditText
-        android:id="@+id/etNumeros"
-        android:layout_width="133dp"
-        android:layout_height="74dp"
-        android:ems="10"
+    <TextView
+        android:id="@+id/tvJabs"
+        android:layout_width="126dp"
+        android:layout_height="50dp"
         android:fontFamily="@font/electrolize"
-        android:inputType="number"
         android:text="000"
+        android:textAlignment="center"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.325"
+        app:layout_constraintHorizontal_bias="0.326"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.186" />
+        app:layout_constraintVertical_bias="0.189" />
 </androidx.constraintlayout.widget.ConstraintLayout>

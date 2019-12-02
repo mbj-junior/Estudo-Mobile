@@ -20,24 +20,8 @@
         android:onClick="irParaRoundSetup"
         />
 
-    <EditText
-        android:id="@+id/etTime"
-        android:layout_width="175dp"
-        android:layout_height="76dp"
-        android:ems="10"
-        android:fontFamily="@font/electrolize"
-        android:inputType="time"
-        android:text="00:00"
-        android:textAlignment="center"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.221" />
-
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/progress_bar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="293dp"
         android:layout_height="45dp"
@@ -58,17 +42,63 @@
         app:srcCompat="@drawable/stop" />
 
     <TextView
-        android:id="@+id/tvRounds"
-        android:layout_width="147dp"
-        android:layout_height="56dp"
+        android:id="@+id/tvRound"
+        android:layout_width="136dp"
+        android:layout_height="39dp"
         android:fontFamily="@font/electrolize"
-        android:text="1 / X"
+        android:text="Round de"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.102" />
+        app:layout_constraintVertical_bias="0.112" />
+
+    <TextView
+        android:id="@+id/tvRoundsTotal"
+        android:layout_width="74dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/electrolize"
+        android:text="X"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.113" />
+
+    <TextView
+        android:id="@+id/tvRoundEmAndamento"
+        android:layout_width="58dp"
+        android:layout_height="39dp"
+        android:fontFamily="@font/electrolize"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.223"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.114" />
+
+    <TextView
+        android:id="@+id/etCronometro"
+        android:layout_width="126dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/electrolize"
+        android:text="00:00"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.237" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

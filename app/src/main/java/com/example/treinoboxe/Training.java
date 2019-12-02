@@ -5,11 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.TextView;
 
 public class Training extends AppCompatActivity {
 
-    int op;
+    private int op;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,18 +18,18 @@ public class Training extends AppCompatActivity {
         Intent thisIntent=getIntent();
         op = Integer.parseInt(thisIntent.getStringExtra("selecionado"));
 
-        EditText etNumeros = (EditText) findViewById(R.id.etNumeros);
-        EditText etTime2 =  (EditText) findViewById(R.id.etTime2);
+        TextView tvNumeros = (TextView) findViewById(R.id.tvJabs);
+        TextView tvTime =  (TextView) findViewById(R.id.etCronometro);
 
         if (op==0){
-            etNumeros.setText(String.valueOf(100));
-            etTime2.setText("05:00");
+            tvNumeros.setText(String.valueOf(100));
+            tvTime.setText("05:00");
         }if (op==1){
-            etNumeros.setText(String.valueOf(200));
-            etTime2.setText("03:00");
+            tvNumeros.setText(String.valueOf(200));
+            tvTime.setText("03:00");
         }if (op==2){
-            etNumeros.setText(String.valueOf(300));
-            etTime2.setText("02:00");
+            tvNumeros.setText(String.valueOf(300));
+            tvTime.setText("02:00");
         }
 
     }

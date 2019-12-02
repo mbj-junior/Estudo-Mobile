@@ -26,13 +26,18 @@ public class RoundSetup extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 
         //Pega os valores
-        EditText tpround = (EditText) findViewById(R.id.etTime);
-        EditText tprest = (EditText) findViewById(R.id.etRest);
-        EditText nrounds = (EditText) findViewById(R.id.etRounds);
+        EditText etMinuto = (EditText) findViewById(R.id.etCronometro);
+        EditText etSegundo = (EditText) findViewById(R.id.etSegundo);
+        EditText etMinuto2 = (EditText) findViewById(R.id.etMinuto2);
+        EditText etSegundo2 = (EditText) findViewById(R.id.etSegundo2);
+        EditText etRounds = (EditText) findViewById(R.id.etRounds);
 
-        intent.putExtra("packTempoRound",String.valueOf(tpround));
-        intent.putExtra("packTempoRest",String.valueOf(tprest));
-        intent.putExtra("packNRounds",String.valueOf(tpround));
+
+        intent.putExtra("packMinRound",etMinuto.getText().toString());
+        intent.putExtra("packSegRound",etSegundo.getText().toString());
+        intent.putExtra("packMinRest",etMinuto2.getText().toString());
+        intent.putExtra("packSegRest",etSegundo2.getText().toString());
+        intent.putExtra("packNRounds",etRounds.getText().toString());
 
         startActivity(intent);
     }
