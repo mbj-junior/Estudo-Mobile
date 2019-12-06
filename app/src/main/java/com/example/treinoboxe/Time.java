@@ -2,12 +2,17 @@ package com.example.treinoboxe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.ProgressBar;
+
 
 import java.util.List;
 
@@ -16,12 +21,16 @@ public class Time extends AppCompatActivity {
     private Handler handler;
     private ProgressBar progress;
     private double tempoDoRoundEmMilisegundos;
+    MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time);
         Intent thisIntent = getIntent();
+
+        //som
+        mp = MediaPlayer.create(this, R.raw.gongo);
 
         TextView tvRoundsTotal = (TextView) findViewById(R.id.tvRoundsTotal);
         TextView etCronometro = (TextView) findViewById(R.id.etCronometro);
@@ -35,7 +44,7 @@ public class Time extends AppCompatActivity {
         int segRound = Integer.parseInt(thisIntent.getStringExtra("packSegRound"));
         int minRest = Integer.parseInt(thisIntent.getStringExtra("packMinRest"));
         int segRest = Integer.parseInt(thisIntent.getStringExtra("packSegRest"));
-        tempoDoRoundEmMilisegundos = ((minRound*60)+segRound)/0.1;
+        tempoDoRoundEmMilisegundos = ((minRound * 60) + segRound) / 0.1;
 
         //Barra de progresso
         progress = (ProgressBar) findViewById(R.id.progress_bar);
@@ -48,7 +57,7 @@ public class Time extends AppCompatActivity {
                     final int value = i;
                     try {
                         //define 1/10 segundo como o tempo para a barra
-                        Thread.sleep((long)tempoDoRoundEmMilisegundos);
+                        Thread.sleep((long) tempoDoRoundEmMilisegundos);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
 
@@ -61,10 +70,15 @@ public class Time extends AppCompatActivity {
                         }
                     });
                 }
-            }
-        };
-        new Thread(runnable).start();
 
+
+            }
+
+        };
+        vibrar(this);
+        tocar (this);
+
+        new Thread(runnable).start();
 
 
     }
@@ -74,6 +88,15 @@ public class Time extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
         this.finish();
+    }
+
+    public void vibrar(Activity view) {
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(500);
+    }
+
+    public void tocar(Activity view){
+        mp.start();
     }
 
 }
