@@ -8,20 +8,30 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.os.Vibrator;
 import android.view.View;
+import android.widget.Chronometer;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ProgressBar;
-
-
 import java.util.List;
 
 public class Time extends AppCompatActivity {
 
+    Chronometer chronometer;
+    ImageView btnStart, btnPause;
+    long time = 0;
+    boolean isPause = false;
+
+
     private Handler handler;
     private ProgressBar progress;
-    private double tempoDoRoundEmMilisegundos;
-    MediaPlayer mp;
+    private MediaPlayer mp;
+    private int numeroDeRounds;
+    private MyCountDownTimer timer;
+    int tempoDoRestEmSegundos;
+    int tempoDoRoundEmSsegundos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,58 +39,52 @@ public class Time extends AppCompatActivity {
         setContentView(R.layout.activity_time);
         Intent thisIntent = getIntent();
 
+        btnStart = (ImageView) findViewById(R.id.btnStart);
+
+
+
         //som
         mp = MediaPlayer.create(this, R.raw.gongo);
 
         TextView tvRoundsTotal = (TextView) findViewById(R.id.tvRoundsTotal);
-        TextView etCronometro = (TextView) findViewById(R.id.etCronometro);
 
+        //Numero de rounds
+        numeroDeRounds = Integer.parseInt(thisIntent.getStringExtra("packNRounds"));
+        tvRoundsTotal.setText(Integer.toString(numeroDeRounds));
 
-        tvRoundsTotal.setText(thisIntent.getStringExtra("packNRounds"));
-        etCronometro.setText(thisIntent.getStringExtra("packTempoRound"));
-
-        //Pegando o tempo e convertendo em milisegundo
+        //Pegando o tempo e convertendo em segundos
         int minRound = Integer.parseInt(thisIntent.getStringExtra("packMinRound"));
         int segRound = Integer.parseInt(thisIntent.getStringExtra("packSegRound"));
         int minRest = Integer.parseInt(thisIntent.getStringExtra("packMinRest"));
         int segRest = Integer.parseInt(thisIntent.getStringExtra("packSegRest"));
-        tempoDoRoundEmMilisegundos = ((minRound * 60) + segRound) / 0.1;
+        tempoDoRoundEmSsegundos = (minRound*60) + segRound;
+        tempoDoRestEmSegundos = (minRest * 60) + segRest;
 
-        //Barra de progresso
-        progress = (ProgressBar) findViewById(R.id.progress_bar);
-        handler = new Handler();
+    }
 
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 1; i <= 100; i++) {
-                    final int value = i;
-                    try {
-                        //define 1/10 segundo como o tempo para a barra
-                        Thread.sleep((long) tempoDoRoundEmMilisegundos);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-
-                    }
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            //define o valor para a barra
-                            progress.setProgress(value);
-                        }
-                    });
-                }
-
-
-            }
-
-        };
+    public void start(View view) {
+        tocar(this);
         vibrar(this);
-        tocar (this);
 
-        new Thread(runnable).start();
+        TextView tv = (TextView) findViewById(R.id.txtCronometro);
 
 
+        for (int i = 0; i < numeroDeRounds; i++) {
+            timer = new MyCountDownTimer(this, tv, tempoDoRoundEmSsegundos*1000, 1000);
+            timer.start();
+
+            if (tv.getText().equals("00:00")) {
+                timer = new MyCountDownTimer(this, tv, tempoDoRestEmSegundos*1000, 1000);
+                timer.start();
+            }
+        }
+    }
+
+    public void pause(View view) {
+        time = chronometer.getBase() - SystemClock.elapsedRealtime();
+        chronometer.stop();
+        btnPause.setEnabled(false);
+        isPause = true;
     }
 
     public void irParaRoundSetup(View view) {
@@ -95,8 +99,21 @@ public class Time extends AppCompatActivity {
         vibrator.vibrate(500);
     }
 
-    public void tocar(Activity view){
+    public void tocar(Activity view) {
         mp.start();
+    }
+
+
+
+
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+
+        if(timer != null){
+            timer.cancel();
+        }
     }
 
 }

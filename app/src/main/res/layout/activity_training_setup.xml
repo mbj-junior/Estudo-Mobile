@@ -10,13 +10,13 @@
         android:id="@+id/imageView2"
         android:layout_width="155dp"
         android:layout_height="155dp"
+        android:onClick="irParaTraining"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.199"
+        app:layout_constraintVertical_bias="0.838"
         app:srcCompat="@drawable/playimg"
-        android:onClick="irParaTraining"
 
         />
 
@@ -59,13 +59,12 @@
         android:id="@+id/imageView7"
         android:layout_width="104dp"
         android:layout_height="104dp"
+        android:onClick="irParaMainActivity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.896"
-        app:srcCompat="@drawable/voltar"
-        android:onClick="irParaMainActivity"
-        />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/voltar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

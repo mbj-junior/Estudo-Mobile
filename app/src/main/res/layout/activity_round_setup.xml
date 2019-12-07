@@ -6,54 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".RoundSetup">
 
-    <EditText
-        android:id="@+id/etSegundo2"
-        android:layout_width="74dp"
-        android:layout_height="55dp"
-        android:ems="10"
-        android:fontFamily="@font/electrolize"
-        android:inputType="time"
-        android:text="30"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
-
-    <EditText
-        android:id="@+id/etMinuto2"
-        android:layout_width="74dp"
-        android:layout_height="55dp"
-        android:ems="10"
-        android:fontFamily="@font/electrolize"
-        android:inputType="time"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.59"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
-
     <TextView
-        android:id="@+id/tvTime4"
-        android:layout_width="16dp"
-        android:layout_height="46dp"
+        android:id="@+id/tvTime"
+        android:layout_width="95dp"
+        android:layout_height="55dp"
         android:fontFamily="@font/electrolize"
-        android:text=":"
+        android:text="TIME"
         android:textAlignment="viewStart"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.696"
+        app:layout_constraintHorizontal_bias="0.234"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.617" />
+        app:layout_constraintVertical_bias="0.298" />
 
     <TextView
         android:id="@+id/tvTime3"
@@ -65,52 +31,106 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.696"
+        app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.493" />
+        app:layout_constraintVertical_bias="0.308" />
+
+    <EditText
+        android:id="@+id/etSegundo"
+        android:layout_width="74dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:fontFamily="@font/electrolize"
+        android:inputType="time"
+        android:text="10"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.798"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.298" />
 
     <TextView
-        android:id="@+id/tvTime"
-        android:layout_width="95dp"
+        android:id="@+id/tvRound"
+        android:layout_width="106dp"
         android:layout_height="55dp"
         android:fontFamily="@font/electrolize"
-        android:text="TIME"
+        android:text="ROUNDS"
         android:textAlignment="viewStart"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.303"
+        app:layout_constraintHorizontal_bias="0.268"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.486" />
+        app:layout_constraintVertical_bias="0.551" />
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="104dp"
-        android:layout_height="104dp"
+    <TextView
+        android:id="@+id/tvTime4"
+        android:layout_width="16dp"
+        android:layout_height="46dp"
+        android:fontFamily="@font/electrolize"
+        android:text=":"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.896"
-        app:srcCompat="@drawable/voltar"
-        android:onClick="irParaMainActivity"
-        />
+        app:layout_constraintVertical_bias="0.432" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="155dp"
-        android:layout_height="155dp"
+    <EditText
+        android:id="@+id/etRounds"
+        android:layout_width="74dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:fontFamily="@font/electrolize"
+        android:inputType="number"
+        android:text="3"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.632"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.182"
-        app:srcCompat="@drawable/playimg"
-        android:onClick="irParaTime"
-        />
+        app:layout_constraintVertical_bias="0.534" />
+
+    <EditText
+        android:id="@+id/etSegundo2"
+        android:layout_width="74dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:fontFamily="@font/electrolize"
+        android:inputType="time"
+        android:text="15"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.798"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.424" />
+
+    <TextView
+        android:id="@+id/tvRest"
+        android:layout_width="95dp"
+        android:layout_height="55dp"
+        android:fontFamily="@font/electrolize"
+        android:text="REST"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.424" />
 
     <EditText
         android:id="@+id/etCronometro"
@@ -124,74 +144,52 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.59"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.486" />
+        app:layout_constraintVertical_bias="0.298" />
 
     <EditText
-        android:id="@+id/etSegundo"
+        android:id="@+id/etMinuto2"
         android:layout_width="74dp"
         android:layout_height="55dp"
         android:ems="10"
         android:fontFamily="@font/electrolize"
         android:inputType="time"
-        android:text="30"
+        android:text="0"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.486" />
+        app:layout_constraintVertical_bias="0.424" />
 
-    <TextView
-        android:id="@+id/tvRound"
-        android:layout_width="106dp"
-        android:layout_height="55dp"
-        android:fontFamily="@font/electrolize"
-        android:text="ROUNDS"
-        android:textAlignment="viewStart"
-        android:textSize="24sp"
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        android:onClick="irParaMainActivity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.739" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/voltar" />
 
-    <EditText
-        android:id="@+id/etRounds"
-        android:layout_width="74dp"
-        android:layout_height="55dp"
-        android:ems="10"
-        android:fontFamily="@font/electrolize"
-        android:inputType="number"
-        android:text="10"
-        android:textAlignment="center"
-        android:textSize="24sp"
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="155dp"
+        android:layout_height="155dp"
+        android:onClick="irParaTime"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.697"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.721" />
-
-    <TextView
-        android:id="@+id/tvRest"
-        android:layout_width="95dp"
-        android:layout_height="55dp"
-        android:fontFamily="@font/electrolize"
-        android:text="REST"
-        android:textAlignment="viewStart"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.329"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
+        app:layout_constraintVertical_bias="0.888"
+        app:srcCompat="@drawable/playimg" />
 
     <TextView
         android:id="@+id/textView3"
